@@ -1,29 +1,10 @@
 from PIL import Image
-from pyzbar.pyzbar import decode
 import numpy as np
 
 
 def open_image():
     image = Image.open("photo.png")
     return image
-
-
-def refresh_qr(rg):
-    img1 = Image.open(rg)
-    img2 = Image.open(rg)
-    w, h = img1.size
-    draw1 = img1.load()
-    draw2 = img2.load()
-    for x in range(w):
-        for y in range(h):
-            if draw1[x,y] == 255:
-                for dx in [-1, 0, 1]:
-                    for dy in [-1, 0, 1]:
-                        nx = x + dx
-                        ny = y + dy
-                        if 0 <= nx < w and 0 <= ny < h:
-                            draw2[nx,ny] = 0
-                            img2.save('qr_img.png')
 
 
 def creator():
@@ -48,5 +29,4 @@ def creator():
 
 if __name__ == '__main__':
     creator()
-    refresh_qr('qr_rg.png')
 
