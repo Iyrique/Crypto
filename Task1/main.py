@@ -5,7 +5,7 @@ from PIL import Image
 
 
 def read_from_file():
-    with open('Task1/msg_encrypt_12', 'rb') as f:
+    with open('msg_encrypt_12', 'rb') as f:
         ciphertext = f.read()
     return ciphertext
 
@@ -35,7 +35,7 @@ def AES_Decrypt():
                         try:
                             img = Image.open(BytesIO(decrypted_message))
                             print(p1, p2, p3, s1, s2)
-                            img.save("Task1/msg_decrypt.png")
+                            img.save("Task1/photo.png")
                             write_to_txt(password, salt, key.hex())
                             work = True
                         except:
