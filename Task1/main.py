@@ -19,10 +19,10 @@ def write_to_txt(password, salt, key):
 def AES_Decrypt():
     ciphertext = read_from_file()
     work = False
-    for p1 in range(ord('u'), ord('z')+1):
+    for p1 in range(ord('a'), ord('z')+1):
         print(p1)
-        for p2 in range(ord('m'), ord('z')+1):
-            for p3 in range(ord('t'), ord('z')+1):
+        for p2 in range(ord('a'), ord('z')+1):
+            for p3 in range(ord('a'), ord('z')+1):
                 for s1 in range(ord('A'), ord('Z')+1):
                     for s2 in range(ord('A'), ord('Z')+1):
                         if work:
@@ -34,7 +34,7 @@ def AES_Decrypt():
                         decrypted_message = cipher.decrypt(ciphertext)
                         try:
                             img = Image.open(BytesIO(decrypted_message))
-                            print(p1,p2,p3,s1,s2)
+                            print(p1, p2, p3, s1, s2)
                             img.save("Task1/msg_decrypt.png")
                             write_to_txt(password, salt, key.hex())
                             work = True
