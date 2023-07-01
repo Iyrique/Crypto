@@ -16,7 +16,7 @@ def refresh_qr(rg):
     draw2 = img2.load()
     for x in range(w):
         for y in range(h):
-            if draw1[x,y] == (255):
+            if draw1[x,y] == 255:
                 for dx in [-1, 0, 1]:
                     for dy in [-1, 0, 1]:
                         nx = x + dx
